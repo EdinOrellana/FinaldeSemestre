@@ -63,7 +63,7 @@ public class Modificar_Guardar extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jtflGenero = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        lblPASWORD = new javax.swing.JLabel();
         jPassword = new javax.swing.JPasswordField();
         jbtnGuardar_Actualizar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
@@ -80,7 +80,7 @@ public class Modificar_Guardar extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Genero");
 
-        jLabel7.setText("Password");
+        lblPASWORD.setText("Password");
 
         jbtnGuardar_Actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,7 +129,7 @@ public class Modificar_Guardar extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtflNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblPASWORD, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -169,7 +169,7 @@ public class Modificar_Guardar extends javax.swing.JInternalFrame {
                     .addComponent(jtflGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(lblPASWORD)
                     .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,7 +223,6 @@ public class Modificar_Guardar extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JPasswordField jPassword;
     public javax.swing.JButton jbtnGuardar_Actualizar;
@@ -232,6 +231,7 @@ public class Modificar_Guardar extends javax.swing.JInternalFrame {
     public javax.swing.JTextField jtflNombre;
     public javax.swing.JTextField jtflVentas;
     public javax.swing.JTextField jtflcodigo;
+    public javax.swing.JLabel lblPASWORD;
     public javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables
 }

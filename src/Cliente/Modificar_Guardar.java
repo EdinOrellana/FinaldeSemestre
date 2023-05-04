@@ -189,6 +189,7 @@ VistaAdmin.BanderaBotonCliente=true;
 VistaAdmin.BanderaGuardarActualizarCliente = true;
 limpiar();
 VistaAdmin.movimiento=-1;
+Escritorio.remove(this);
     }//GEN-LAST:event_jbtnGuardar_ActualizarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

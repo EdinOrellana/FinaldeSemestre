@@ -175,6 +175,8 @@ public class VistaAdmin extends javax.swing.JInternalFrame {
                 } else if (BanderaBotonVendedor) {
                     Escritorio.add(vendedorCrear);
                     vendedorCrear.show();
+                    vendedorCrear.jPassword.setVisible(false);
+                    vendedorCrear.lblPASWORD.setVisible(false);
                     BanderaBotonVendedor = false;
                     BanderaGuardarActualizarVendedor = false;
                     vendedorCrear.lblTitulo.setText("Actualizar Vendedor");
@@ -725,6 +727,8 @@ public class VistaAdmin extends javax.swing.JInternalFrame {
             BanderaBotonVendedor = false;
             vendedorCrear.lblTitulo.setText("Nuevo Vendedor");
             vendedorCrear.jbtnGuardar_Actualizar.setText("Guardar");
+            vendedorCrear.jPassword.setVisible(true);
+            vendedorCrear.lblPASWORD.setVisible(true);
         }
 
     }//GEN-LAST:event_btnCrearVendedorActionPerformed
@@ -874,7 +878,7 @@ public class VistaAdmin extends javax.swing.JInternalFrame {
             controladoradmin.pdf(cn, "vendedores");
         } catch (FileNotFoundException | DocumentException ex) {
             Logger.getLogger(VistaAdmin.class.getName()).log(Level.SEVERE, null, ex);
-        }   
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
     public static int movimiento = 0;
     public static boolean BanderaTablaCliente = true, BanderaTablaProducto = true, BanderaTablasucursal = true, BanderaTablaVendedor = true;

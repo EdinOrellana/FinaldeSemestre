@@ -54,7 +54,7 @@ public class ControladorAdmin {
             String[] Titulo = {"Codigo", "Nombre", "NIT", "correo", "Genero"};
             modelo.setColumnIdentifiers(Titulo);
             for (int x = 0; x < Datos.size(); x++) {
-                String[] datos = new String[6];
+                String[] datos = new String[5];
                 datos[0] = String.valueOf(x + 1);
                 datos[1] = Datos.get(x).getNombre();
                 datos[2] = String.valueOf(Datos.get(x).getNit());
@@ -84,7 +84,7 @@ public class ControladorAdmin {
             String[] Titulo = {"Codigo", "nombre", "descripcion", "cantidad", "precio"};
             modelo.setColumnIdentifiers(Titulo);
             for (int x = 0; x < Datos.size(); x++) {
-                String[] datos = new String[6];
+                String[] datos = new String[5];
                 datos[0] = String.valueOf(x + 1);
                 datos[1] = Datos.get(x).getNombre();
                 datos[2] = Datos.get(x).getDescripcion();
@@ -114,7 +114,7 @@ public class ControladorAdmin {
             String[] Titulo = {"Codigo", "Nombre", "Direccion", "correo", "Telefono"};
             modelo.setColumnIdentifiers(Titulo);
             for (int x = 0; x < Datos.size(); x++) {
-                String[] datos = new String[6];
+                String[] datos = new String[5];
                 datos[0] = String.valueOf(x + 1);
                 datos[1] = Datos.get(x).getNombre();
                 datos[2] = Datos.get(x).getDireccion();
@@ -144,7 +144,7 @@ public class ControladorAdmin {
             String[] Titulo = {"Codigo", "Nombre", "caja", "ventas", "Genero"};
             modelo.setColumnIdentifiers(Titulo);
             for (int x = 0; x < Datos.size(); x++) {
-                String[] datos = new String[6];
+                String[] datos = new String[5];
                 datos[0] = String.valueOf(x + 1);
                 datos[1] = Datos.get(x).getNombre();
                 datos[2] = String.valueOf(Datos.get(x).getCaja());

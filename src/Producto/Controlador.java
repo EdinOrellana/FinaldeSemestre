@@ -5,7 +5,6 @@
  */
 package Producto;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class Controlador {
 
-    
-
-   public void guardar(int cantidad, double precio, String nombre, String descripcion, Connection cn) {
+    public void guardar(int cantidad, double precio, String nombre, String descripcion, Connection cn) {
         try {
             String Consulta = "INSERT INTO producto (nombre, descripcion,cantidad,precio) VALUES(?,?,?,?)";
             PreparedStatement pst = cn.prepareStatement(Consulta);
@@ -51,7 +48,7 @@ public class Controlador {
             JOptionPane.showMessageDialog(null, "No Actualizado");
         }
     }
-    
+
     public ArrayList obtener(Connection cn, String Nombre, String descripcion) {
         ArrayList<Modelo> Datos = new ArrayList();
         try {
@@ -59,7 +56,7 @@ public class Controlador {
             Statement ps = cn.createStatement();
             ResultSet rs = ps.executeQuery(consulta);
             if (rs.next()) {
-                Datos.add(new Modelo(rs.getInt("codigo"), rs.getInt("cantidad"), rs.getDouble("precio"),rs.getString("nombre"), rs.getString("descripcion")));
+                Datos.add(new Modelo(rs.getInt("codigo"), rs.getInt("cantidad"), rs.getDouble("precio"), rs.getString("nombre"), rs.getString("descripcion")));
             }
             rs.close();
             ps.close();
@@ -68,4 +65,22 @@ public class Controlador {
         }
         return Datos;
     }
-   }
+
+    public ArrayList obtenerProductoFactura(int Codigo, Connection cn) {
+        ArrayList<Modelo> Datos = new ArrayList();
+        try {
+
+            String consulta = "SELECT * FROM producto WHERE codigo =" + Codigo;
+            Statement ps = cn.createStatement();
+            ResultSet rs = ps.executeQuery(consulta);
+            if (rs.next()) {
+                Datos.add(new Modelo(rs.getInt("codigo"), rs.getInt("cantidad"), rs.getDouble("precio"), rs.getString("nombre"), rs.getString("descripcion")));
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "El produccto no existe", "INCORRECTO", JOptionPane.ERROR_MESSAGE);
+        }
+        return Datos;
+    }
+}

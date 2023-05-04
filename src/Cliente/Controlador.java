@@ -65,5 +65,21 @@ public class Controlador {
         }
         return Datos;
     }
-
+public ArrayList obtenerClienteFactura(String nombre,int nit,String correo,String genero,Connection cn) {
+        ArrayList<Modelo> Datos = new ArrayList();
+        try {
+            
+            String consulta = "SELECT * from cliente where (nombre like '%"+nombre+"%' and correo like '%"+correo+"%' and genero like '%"+genero+"%') or nit like '%"+nit+"%'; ";
+            Statement ps = cn.createStatement();
+            ResultSet rs = ps.executeQuery(consulta);
+            while (rs.next()) {
+                  Datos.add(new Modelo(rs.getInt("codigo"), rs.getInt("nit"), rs.getString("nombre"), rs.getString("correo"), rs.getString("genero")));
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Datos;
+    }
 }

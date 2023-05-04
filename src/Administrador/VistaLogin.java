@@ -45,9 +45,9 @@ public class VistaLogin extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jlblNombre = new javax.swing.JLabel();
         jlblContrasena = new javax.swing.JLabel();
-        jtflContra = new javax.swing.JTextField();
         jtflUsuario = new javax.swing.JTextField();
         btnIniciarsesion = new javax.swing.JButton();
+        jtflContra = new javax.swing.JPasswordField();
 
         jLabel1.setText("POS");
 
@@ -76,8 +76,8 @@ public class VistaLogin extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnIniciarsesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jtflContra)
-                            .addComponent(jtflUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jtflUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                            .addComponent(jtflContra)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(jLabel1)))
@@ -98,7 +98,7 @@ public class VistaLogin extends javax.swing.JInternalFrame {
                     .addComponent(jtflContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIniciarsesion)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -117,7 +117,7 @@ public class VistaLogin extends javax.swing.JInternalFrame {
 int contador=0;
     private void btnIniciarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesionActionPerformed
         try {
-            String consulta = "Select nombre,rol from vendedores where nombre='" + jtflUsuario.getText().trim() + "' and password='" + jtflContra.getText().trim() + "'";
+            String consulta = "Select codigo,nombre,rol from vendedores where nombre='" + jtflUsuario.getText().trim() + "' and password='" + jtflContra.getText().trim() + "'";
             Statement pr = cn.createStatement();
             ResultSet rs = pr.executeQuery(consulta);
             if (rs.next()) {
@@ -127,10 +127,13 @@ int contador=0;
                     vistaAdmin.show();
                     vistaAdmin.setVisible(true);
                 } else {
+                    
                     Escritorio.remove(this);
                     Escritorio.add(Vistaven);
                     Vistaven.show();
                     Vistaven.setVisible(true);
+                    Vistaven.jlblIDVENDEDOR.setText(String.valueOf(rs.getInt("codigo")));
+                    Vistaven.jLabel1.setText("Vendedor "+rs.getString("nombre"));
                 }
 
                 this.setVisible(false);
@@ -163,7 +166,7 @@ int contador=0;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlblContrasena;
     private javax.swing.JLabel jlblNombre;
-    public static javax.swing.JTextField jtflContra;
+    private javax.swing.JPasswordField jtflContra;
     public static javax.swing.JTextField jtflUsuario;
     // End of variables declaration//GEN-END:variables
 }
